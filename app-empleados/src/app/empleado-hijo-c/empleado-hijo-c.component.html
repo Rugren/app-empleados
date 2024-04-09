@@ -12,9 +12,27 @@
         <div class="col">
             <div>
 
-                {{indice+1}}: {{empleadoDeLista.nombre}} {{empleadoDeLista.apellido}} {{empleadoDeLista.cargo}} {{empleadoDeLista.salario}}
+                {{indice+1}}: {{empleadoDeLista.nombre}} {{empleadoDeLista.apellido}} {{empleadoDeLista.cargo}}
+                {{empleadoDeLista.salario}}
 
             </div>
+
+            <!-- Ver "Configuring the parent's template" en: https://angular.io/guide/inputs-outputs 
+            <app-item-output (newItemEvent)="addItem($event)"></app-item-output> 
+        
+            <ul>
+                <li *ngFor="let item of items">{{item}}</li>
+            </ul>
+            -->
+
+            <!-- Componente nieto: -->
+            <app-caracteristicas-empleado-c (caracteristicasEmpleados)="agregarCaracteristica($event)"></app-caracteristicas-empleado-c>
+            
+            <!-- Componente hijo: -->
+            <ul style="list-style: none;">
+                <li *ngFor="let caracteristica of arrayCaracteristicas">{{caracteristica}}</li>
+            </ul>
+
         </div>
     </div>
 </div>

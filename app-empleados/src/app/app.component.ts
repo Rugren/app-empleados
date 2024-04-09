@@ -10,6 +10,7 @@ export class AppComponent {
   // title = 'app-empleados';
   titulo = 'Listado de empleados';
 
+  /* Pasado a empleado-hijo-c.component.ts también */
   empleados: Empleado[] = [
     // Estos son los que aparecerán por defecto, metidos manualmente (ver si se pueden borrar desde la BD y no aparecen después cuando vuelva a cargar)
     new Empleado("Juan", "Díaz", "Presidente", 7500),
@@ -26,6 +27,7 @@ export class AppComponent {
     this.empleados.push(miEmpleado);
     // Se crean los empleados, pero si refrescamos vemos que no los guarda, porque no tenemos una BD.
   }
+
 
   cuadroNombre: string = "";
   cuadroApellido: string = "";
