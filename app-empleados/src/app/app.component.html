@@ -29,7 +29,7 @@
     </div>
 
     <div class="col">
-      <button type="submit" class="btn btn-primary" (click)="agregarEmpleado()" style="margin-top: 35px;">Agregar</button>
+      <button type="submit" class="btn btn-primary" (click)="agregarEmpleado()" style="margin-top: 35px;">Agregar Empleado</button>
     </div>
 
 
@@ -38,7 +38,13 @@
 
 </div>
 
-<br><br>
+<br><br><br>
+
+<!-- Renombrados a [empleadoDeLista]="empleado" [indice]="i" para que no de lugar a confusión y puesto en empleado-hijo-c.component.html -->
+<app-empleado-hijo-c *ngFor="let empleado of empleados; let i=index" [empleadoDeLista]="empleado" [indice]="i"></app-empleado-hijo-c>
+
+<!-- El *ngFor metido en <app-empleado-hijo-c> 
+y el Div pasado a empleado-hijo-c.component.html y ahí modificado
 
 <div class="container">
   <div class="row">
@@ -50,4 +56,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
