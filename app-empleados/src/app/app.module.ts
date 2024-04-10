@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { EmpleadoHijoCComponent } from './empleado-hijo-c/empleado-hijo-c.component';
 import { CaracteristicasEmpleadoCComponent } from './caracteristicas-empleado-c/caracteristicas-empleado-c.component';
+import { ServicioEmpleadosService } from './servicio-empleados.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CaracteristicasEmpleadoCComponent } from './caracteristicas-empleado-c/
     FormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    ServicioEmpleadosService
   ],
   bootstrap: [AppComponent]
 })

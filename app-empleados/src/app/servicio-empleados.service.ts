@@ -6,4 +6,11 @@ import { Injectable } from '@angular/core';
 export class ServicioEmpleadosService {
 
   constructor() { }
+
+  muestraMensaje(mensaje:string){
+    alert(mensaje);
+  }
+
+
+
 }
