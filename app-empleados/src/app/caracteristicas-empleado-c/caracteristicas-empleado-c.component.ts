@@ -13,7 +13,7 @@ export class CaracteristicasEmpleadoCComponent implements OnInit {
   /* Buscar @Output() newItemEvent = new EventEmitter<string>(); 
   en https://angular.io/guide/inputs-outputs para ver qué hace la instrucción. */
 
-  // la línea siguiente la tenía comentada y no me iba (no sé si había que comentarla porque la metimos en otro sitio)
+// la línea siguiente la tenía comentada y no me iba (no sé si había que comentarla porque la metimos en otro sitio)
   constructor(private miServicio:ServicioEmpleadosService) { }
 
   ngOnInit(): void {
@@ -27,9 +27,9 @@ export class CaracteristicasEmpleadoCComponent implements OnInit {
 
   agregaCaracteristicas(value: string) {
     // miServicio.muestraMensaje Muestra un Alert cuando añadamos una característica
-  // la línea siguiente la tenía comentada y no me iba (no sé si había que comentarla porque la metimos en otro sitio)
+// la línea siguiente la tenía comentada y no me iba (no sé si había que comentarla porque la metimos en otro sitio)
     this.miServicio.muestraMensaje("Característica agregada: " + value);
-  // la línea siguiente la tenía comentada y no me iba (no sé si había que comentarla porque la metimos en otro sitio)
+// la línea siguiente la tenía comentada y no me iba (no sé si había que comentarla porque la metimos en otro sitio)
     this.caracteristicasEmpleados.emit(value);
   }
 

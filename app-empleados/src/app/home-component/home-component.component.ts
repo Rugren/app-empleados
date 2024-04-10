@@ -13,7 +13,7 @@ export class HomeComponentComponent {
 
   constructor(private miServicio: ServicioEmpleadosService, private empleadosService: EmpleadosService) {
     // Este constructor los añadiría a la BD: empleados.service.ts
-    // this.empleados = this.empleadosService.empleados; // (pasado al ngOnInit)
+    // this.empleados = this.empleadosService.empleados; // (pasado abajo al ngOnInit)
   }
 
   ngOnInit(): void {
