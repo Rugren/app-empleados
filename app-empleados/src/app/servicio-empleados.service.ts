@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+// Servicio de la ventana emergente
+
 @Injectable({
   providedIn: 'root'
 })
