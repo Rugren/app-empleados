@@ -35,7 +35,7 @@ export class HomeComponentComponent {
     // Esto se tiene que guardar en el Array empleados de arriba.
     let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
     // miServicio.muestraMensaje es un método que se ha creado en el servicio que Muestra una Alerta
-    //this.miServicio.muestraMensaje("Nombre y apellidos del empleado: " + miEmpleado.nombre + " " + miEmpleado.apellido);
+    //(mejorado en empleados.service.ts con + salario) this.miServicio.muestraMensaje("Nombre y apellidos del empleado: " + miEmpleado.nombre + " " + miEmpleado.apellido);
     // Se crean los empleados, pero si refrescamos vemos que no los guarda, porque no tenemos una BD.
     // this.empleados.push(miEmpleado); // comentada porque se la vamos a dejar al servicio: empleados.service.ts
 
