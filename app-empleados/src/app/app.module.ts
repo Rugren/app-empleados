@@ -13,6 +13,7 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { QuienesComponentComponent } from './quienes-component/quienes-component.component';
 import { ContactoComponentComponent } from './contacto-component/contacto-component.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ActualizaComponentComponent } from './actualiza-component/actualiza-component.component';
 
 const appRoutes:Routes=[
 {path:'', component:HomeComponentComponent},
@@ -31,7 +32,8 @@ const appRoutes:Routes=[
     ProyectosComponentComponent,
     HomeComponentComponent,
     QuienesComponentComponent,
-    ContactoComponentComponent
+    ContactoComponentComponent,
+    ActualizaComponentComponent
   ],
   imports: [
     BrowserModule,
