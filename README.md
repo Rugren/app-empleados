@@ -1,0 +1,3 @@
+- Para abrir este proyecto debemos tener instalado Angular en nuestro ejecutor de código.
+- Luego ejecutar en la consola de comandos la cd + La ruta de la carpeta dónde descarguemos el proyecto
+- Ejecutar comando en la consola para abrirlo en nuestro servidor local: ng serve -o
