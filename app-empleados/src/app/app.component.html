@@ -1,6 +1,26 @@
-<!-- A grey horizontal navbar that becomes vertical on small screens 
-https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
-<nav class="navbar navbar-expand-sm justify-content-center bg-light">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{titulo}}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+
+<!-- Puesta Barra de navegación con menú desplegable (pero el desplegable no funciona)
+  Buscar: Navbar With Dropdown 
+  https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp
+  https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_dropdown&stacked=h
+-->
+
+<nav class="navbar navbar-expand-sm justify-content-center bg-dark navbar-dark">
+
+  <a class="navbar-brand" href="#">LOGO</a>
 
   <ul class="navbar-nav">
     <li class="nav-item">
@@ -15,8 +35,36 @@ https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
     <li class="nav-item">
       <a class="nav-link" href="/contacto">Contacto</a>
     </li>
+
+<!-- menú desplegable (pero el desplegable no funciona)  -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Menú desplegable
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/proyectos">Proyectos</a>
+        <a class="dropdown-item" href="/quienes">Quiénes somos</a>
+        <a class="dropdown-item" href="/contacto">Contacto</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </li>
+
   </ul>
 
+  <!-- barra de búsqueda - Navbar Forms and Buttons: 
+    https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp
+  -->
+  <!-- Para que funcionase este formulario de búsqueda, habría que crear una página en el action: -->
+  <form class="form-inline" action="/action_page.php">
+    <input class="form-control mr-sm-2" type="text" placeholder="Búsqueda">
+    <button class="btn btn-success" type="submit">Buscar</button>
+  </form>
+
 </nav>
+<br>
 
 <router-outlet></router-outlet>
+
+</body>
+</html>
