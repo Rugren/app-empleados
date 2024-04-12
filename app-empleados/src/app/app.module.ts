@@ -24,8 +24,8 @@ const appRoutes:Routes=[
 //  {path:'actualiza', component:ActualizaComponentComponent}, // así si se muestra el http://localhost:4200/actualiza con actualiza-component works!
 {path:'actualiza/:id', component:ActualizaComponentComponent},
 
-/* Los "**" (2 asteriscos) son para cuando sea una ruta distinta a todas las anteriores (proyectos, contacto,...) redirige aquí.
-¡IMPORTANTE! El path del error personalizado dejar el último, porque es la última ruta que se va a ejecutar. */
+/* Los '**' (2 asteriscos) son para cuando sea una ruta distinta a todas las anteriores (proyectos, contacto,...) redirige aquí.
+¡IMPORTANTE! El path del error personalizado poner la última, porque es la última ruta que se va a ejecutar. */
 {path:'**', component:ErrorPersonalizadoComponent}
 
 ];
