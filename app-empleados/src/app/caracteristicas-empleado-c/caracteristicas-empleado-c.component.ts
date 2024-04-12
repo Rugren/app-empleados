@@ -27,9 +27,7 @@ export class CaracteristicasEmpleadoCComponent implements OnInit {
 
   agregaCaracteristicas(value: string) {
     // miServicio.muestraMensaje Muestra un Alert cuando añadamos una característica
-// la línea siguiente la tenía comentada y no me iba (no sé si había que comentarla porque la metimos en otro sitio)
-    this.miServicio.muestraMensaje("Característica agregada: " + value);
-// la línea siguiente la tenía comentada y no me iba (no sé si había que comentarla porque la metimos en otro sitio)
+    // (Comentado para quitar EL ALERT cuando se crea) this.miServicio.muestraMensaje("Característica agregada: " + value);
     this.caracteristicasEmpleados.emit(value);
   }
 

@@ -19,7 +19,9 @@ const appRoutes:Routes=[
 {path:'', component:HomeComponentComponent},
 {path:'proyectos', component:ProyectosComponentComponent},
 {path:'quienes', component:QuienesComponentComponent},
-{path:'contacto', component:ContactoComponentComponent}
+{path:'contacto', component:ContactoComponentComponent},
+//  {path:'actualiza', component:ActualizaComponentComponent}, // así si se muestra el http://localhost:4200/actualiza con actualiza-component works!
+{path:'actualiza/:id', component:ActualizaComponentComponent}
 
 ];
 
