@@ -50,6 +50,11 @@ export class ActualizaComponentComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  // CREADO DENTRO DE actualiza-component.component.html, no creado otro componente eliminarComponent.
+  eliminaEmpleado() {
+    this.empleadosService.eliminarEmpleado(this.indice);
+    this.router.navigate(['']);
+  }
 
 
   cuadroNombre: string = "";
