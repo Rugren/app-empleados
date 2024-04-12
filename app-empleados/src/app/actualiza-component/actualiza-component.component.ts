@@ -15,31 +15,39 @@ import { Empleado } from '../empleado.model';
 export class ActualizaComponentComponent implements OnInit {
 
   // Traido todo del proyectos-component.component.ts 
-  constructor(private router:Router, private route:ActivatedRoute, private miServicio:ServicioEmpleadosService, private empleadosService:EmpleadosService) {
+  constructor(private router: Router, private route: ActivatedRoute, private miServicio: ServicioEmpleadosService, private empleadosService: EmpleadosService) {
   }
 
   empleados: Empleado[] = [];
-  
+
+  // Variable accion será la que modifique o elimine (metida en el "ngOnInit():" de abajo)
+  accion: number;
+
   ngOnInit(): void {
+
+    // el 'accion' lo coge de empleado-hijo-c.component.html donde pone por ejemplo cogerá 1 o 2 de nuestras posibilidades: [queryParams]="{action: '2'}">
+    this.accion = parseInt(this.route.snapshot.queryParams['accion']);
+
     this.empleados = this.empleadosService.empleados;
     // Para que se muestre el empleado que se va a actualizar:
     this.indice = this.route.snapshot.params['id'];
-    let empleado:Empleado = this.empleadosService.encontrarEmpleado(this.indice);
-  
+    let empleado: Empleado = this.empleadosService.encontrarEmpleado(this.indice);
+
     // Que ponga los campos rellenados dentro de los campos.
     this.cuadroNombre = empleado.nombre;
     this.cuadroApellido = empleado.apellido;
     this.cuadroCargo = empleado.cargo;
     this.cuadroSalario = empleado.salario;
-  
+
   }
 
   // Función del botón para volver al home/inicio de la web.
-  volverHome(){
+  volverHome() {
     this.router.navigate(['']); // La cadena vacía '' es la home
 
   }
 
+  /*
   actualizaEmpleado() {
     let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
     
@@ -55,13 +63,31 @@ export class ActualizaComponentComponent implements OnInit {
     this.empleadosService.eliminarEmpleado(this.indice);
     this.router.navigate(['']);
   }
+  */
 
+  // Esta es la nueva función actualizaEmpleado(), que modificará y eliminará, todo en uno.
+  actualizaEmpleado() {
+
+    if (this.accion == 1) {
+      let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
+
+      // Sobreescribe en el índice lo que modifiquemos del empleado
+      this.empleadosService.actualizarEmpleado(this.indice, miEmpleado);
+
+      // Esto no puesto en home-component.component.ts (para hacer que redirija a la home cuando cree el empleado):
+      this.router.navigate(['']);
+    }
+    else {
+      this.empleadosService.eliminarEmpleado(this.indice);
+      this.router.navigate(['']);
+    }
+  }
 
   cuadroNombre: string = "";
   cuadroApellido: string = "";
   cuadroCargo: string = "";
   cuadroSalario: number = 0;
 
-  indice:number;
+  indice: number;
 
 }
