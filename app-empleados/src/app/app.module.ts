@@ -14,6 +14,7 @@ import { QuienesComponentComponent } from './quienes-component/quienes-component
 import { ContactoComponentComponent } from './contacto-component/contacto-component.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ActualizaComponentComponent } from './actualiza-component/actualiza-component.component';
+import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
 
 const appRoutes:Routes=[
 {path:'', component:HomeComponentComponent},
@@ -21,7 +22,11 @@ const appRoutes:Routes=[
 {path:'quienes', component:QuienesComponentComponent},
 {path:'contacto', component:ContactoComponentComponent},
 //  {path:'actualiza', component:ActualizaComponentComponent}, // así si se muestra el http://localhost:4200/actualiza con actualiza-component works!
-{path:'actualiza/:id', component:ActualizaComponentComponent}
+{path:'actualiza/:id', component:ActualizaComponentComponent},
+
+/* Los "**" (2 asteriscos) son para cuando sea una ruta distinta a todas las anteriores (proyectos, contacto,...) redirige aquí.
+¡IMPORTANTE! El path del error personalizado dejar el último, porque es la última ruta que se va a ejecutar. */
+{path:'**', component:ErrorPersonalizadoComponent}
 
 ];
 
@@ -35,7 +40,8 @@ const appRoutes:Routes=[
     HomeComponentComponent,
     QuienesComponentComponent,
     ContactoComponentComponent,
-    ActualizaComponentComponent
+    ActualizaComponentComponent,
+    ErrorPersonalizadoComponent
   ],
   imports: [
     BrowserModule,
