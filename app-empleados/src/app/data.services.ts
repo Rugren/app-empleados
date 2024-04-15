@@ -20,10 +20,27 @@ export class DataServices {
 
         response => console.log("Se han guardado los empleados: " + response),
         error => console.log("Error: " + error),
-
         );
+    }
 
+    actualizarEmpleadoBD(indice:number, empleado:Empleado){
+        let url = 'https://app-empleados-44a41-default-rtdb.europe-west1.firebasedatabase.app/datos/' + indice + '.json';
 
+        this.httpClient.put(url, empleado).subscribe(
+
+        response => console.log("Se ha modificado correctamente el empleado: " + response),
+        error => console.log("Error: " + error),
+        );
+    }
+
+    eliminarEmpleadoBD(indice:number){
+        let url = 'https://app-empleados-44a41-default-rtdb.europe-west1.firebasedatabase.app/datos/' + indice + '.json';
+
+        this.httpClient.delete(url).subscribe(
+
+        response => console.log("Se ha eliminado correctamente el empleado: " + response),
+        error => console.log("Error: " + error),
+        );
     }
 
 

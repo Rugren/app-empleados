@@ -54,10 +54,19 @@ export class EmpleadosService {
         empleadoModificado.apellido = empleado.apellido;
         empleadoModificado.cargo = empleado.cargo;
         empleadoModificado.salario = empleado.salario;
+
+        this.dataService.actualizarEmpleadoBD(indice, empleado);
     }
 
     eliminarEmpleado(indice:number) {
         this.empleados.splice(indice, 1);
+
+        // Para eliminar los datos en la BD y que se queden guardados los siguientes, que no nos borre uno y los siguientes dé error.
+        this.dataService.eliminarEmpleadoBD(indice);
+
+        // if(this.empleados!=null) // Se puede prescindir de esto, ya que si no hay empleados, no se ejecuta el siguiente código
+        this.dataService.guardarEmpleadosBD(this.empleados);
+    
     }
 
 
