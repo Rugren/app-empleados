@@ -17,7 +17,15 @@ export class HomeComponentComponent {
   }
 
   ngOnInit(): void {
-    this.empleados = this.empleadosService.empleados;
+    /* this.empleados = this.empleadosService.empleados;
+    Ahora se hace la llamada al servicio para que nos devuelva los empleados de la BD */
+    this.empleadosService.obtenerEmpleadosBD().subscribe(misEmpleados=>{
+      
+      console.log(misEmpleados);
+
+      this.empleados = Object.values(misEmpleados);
+      this.empleadosService.setEmpleados(this.empleados);
+    });
   }
 
 
@@ -41,6 +49,8 @@ export class HomeComponentComponent {
 
     // Ahora se guarda en la BD
     this.empleadosService.agregarEmpleadoServicio(miEmpleado);
+
+    console.log(miEmpleado);
   }
 
 
