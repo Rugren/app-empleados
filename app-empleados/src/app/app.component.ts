@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
       apiKey: "AIzaSyC3SseHokcVeHyBx7GksfVRE_mp3Qy1BNw",
       authDomain: "app-empleados-44a41.firebaseapp.com",
 
-    })
+    });
   }
 
   estaLogeado() {
