@@ -17,6 +17,8 @@ import { ActualizaComponentComponent } from './actualiza-component/actualiza-com
 import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
 import { DataServices } from './data.services';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
 
 const appRoutes:Routes=[
 {path:'', component:HomeComponentComponent},
@@ -25,6 +27,7 @@ const appRoutes:Routes=[
 {path:'contacto', component:ContactoComponentComponent},
 //  {path:'actualiza', component:ActualizaComponentComponent}, // así si se muestra el http://localhost:4200/actualiza con actualiza-component works!
 {path:'actualiza/:id', component:ActualizaComponentComponent},
+{path:'login', component:LoginComponent},
 
 /* Los '**' (2 asteriscos) son para cuando sea una ruta distinta a todas las anteriores (proyectos, contacto,...) redirige aquí.
 ¡IMPORTANTE! El path del error personalizado poner la última, porque es la última ruta que se va a ejecutar. */
@@ -43,7 +46,8 @@ const appRoutes:Routes=[
     QuienesComponentComponent,
     ContactoComponentComponent,
     ActualizaComponentComponent,
-    ErrorPersonalizadoComponent
+    ErrorPersonalizadoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,8 @@ const appRoutes:Routes=[
     provideClientHydration(),
     ServicioEmpleadosService,
     EmpleadosService,
-    DataServices
+    DataServices,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
