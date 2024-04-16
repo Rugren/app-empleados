@@ -20,12 +20,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
 import { CookieService } from 'ngx-cookie-service';
+import { LoginGuardian } from './login/login-guardian';
 
 const appRoutes:Routes=[
 {path:'', component:HomeComponentComponent},
 {path:'proyectos', component:ProyectosComponentComponent},
 {path:'quienes', component:QuienesComponentComponent},
-{path:'contacto', component:ContactoComponentComponent},
+{path:'contacto', component:ContactoComponentComponent, canActivate:[LoginGuardian]}, // Página que nos pedirá estar logados para poder acceder a esta.
+
 //  {path:'actualiza', component:ActualizaComponentComponent}, // así si se muestra el http://localhost:4200/actualiza con actualiza-component works!
 {path:'actualiza/:id', component:ActualizaComponentComponent},
 {path:'login', component:LoginComponent},
@@ -64,7 +66,8 @@ const appRoutes:Routes=[
     EmpleadosService,
     DataServices,
     LoginService,
-    CookieService
+    CookieService,
+    LoginGuardian
   ],
   bootstrap: [AppComponent]
 })
