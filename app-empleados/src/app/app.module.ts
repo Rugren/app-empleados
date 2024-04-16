@@ -19,6 +19,7 @@ import { DataServices } from './data.services';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
+import { CookieService } from 'ngx-cookie-service';
 
 const appRoutes:Routes=[
 {path:'', component:HomeComponentComponent},
@@ -62,7 +63,8 @@ const appRoutes:Routes=[
     ServicioEmpleadosService,
     EmpleadosService,
     DataServices,
-    LoginService
+    LoginService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })
