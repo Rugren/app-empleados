@@ -29,4 +29,17 @@ export class LoginService {
         return this.token;
     }
 
+    estaLogeado(){
+        return this.token;
+        // return this.token != null;
+        // return firebase.auth().currentUser !== null;
+    }
+
+    logout(){
+        firebase.auth().signOut().then(()=>{
+            this.token = "";
+            this.router.navigate(['/']);
+        });
+    }
+
 }

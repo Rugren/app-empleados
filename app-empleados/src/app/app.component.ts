@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import firebase from 'firebase/compat/app'
+import { LoginService } from './login/login.service';
 // import { AngularFireModule } from '@angular/fire/compat'
 
 @Component({
@@ -12,7 +13,9 @@ export class AppComponent implements OnInit {
   // title = 'app-empleados';
   titulo = 'Listado de empleados';
 
-  constructor(){}
+  constructor(private loginService: LoginService) {
+
+  }
 
   ngOnInit(): void {
 
@@ -22,8 +25,14 @@ export class AppComponent implements OnInit {
       authDomain: "app-empleados-44a41.firebaseapp.com",
 
     })
+  }
 
+  estaLogeado() {
+    return this.loginService.estaLogeado();
+  }
 
+  logout() {
+    this.loginService.logout();
   }
 
 
